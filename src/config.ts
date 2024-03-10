@@ -1,13 +1,13 @@
 import Phaser from "phaser";
-import MainScene from "./scenes/mainScene";
-import PreloadScene from "./scenes/preloadScene";
+import DogScene from "./scenes/DogScenes";
+import DogDetailsScene from "./scenes/DogDetailsScene";
 
-const DEFAULT_WIDTH = 1280;
-const DEFAULT_HEIGHT = 720;
+const DEFAULT_WIDTH = 800;
+const DEFAULT_HEIGHT = 600;
 
 export const CONFIG = {
-    title: "My Untitled Phaser 3 Game",
-    version: "0.0.1",
+    title: "Dog Picking Game",
+    version: "1.0.0",
     type: Phaser.AUTO,
     backgroundColor: "#ffffff",
     scale: {
@@ -17,22 +17,17 @@ export const CONFIG = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT,
     },
-    scene: [PreloadScene, MainScene],
+    scene: [
+        new DogScene("weinerDog"),
+        new DogScene("breadDog"),
+        new DogScene("heartglasses"),
+        new DogScene("threePugs"),
+        DogDetailsScene,
+    ],
     physics: {
         default: "arcade",
         arcade: {
             debug: false,
-            gravity: { y: 300 },
         },
-    },
-    input: {
-        keyboard: true,
-        mouse: true,
-        touch: true,
-        gamepad: false,
-    },
-    render: {
-        pixelArt: false,
-        antialias: true,
     },
 };
