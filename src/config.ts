@@ -17,13 +17,7 @@ export const CONFIG = {
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT,
     },
-    scene: [
-        new DogScene("weinerDog"),
-        new DogScene("breadDog"),
-        new DogScene("heartglasses"),
-        new DogScene("threePugs"),
-        DogDetailsScene,
-    ],
+    scene: [DogScene, DogDetailsScene],
     physics: {
         default: "arcade",
         arcade: {
